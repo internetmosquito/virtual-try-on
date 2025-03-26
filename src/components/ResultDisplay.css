@@ -1,0 +1,136 @@
+.result-display {
+  width: 100%;
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.result-display.empty {
+  padding: 40px;
+  background-color: #ecf0f1;
+  border-radius: 5px;
+  text-align: center;
+  color: #7f8c8d;
+}
+
+.result-display h3 {
+  margin-bottom: 15px;
+  color: #2c3e50;
+}
+
+.result-image-container {
+  width: 100%;
+  max-width: 500px;
+  overflow: hidden;
+  border-radius: 5px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 15px;
+  position: relative;
+}
+
+.result-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.result-image.image-error {
+  opacity: 0.5;
+  filter: grayscale(50%);
+}
+
+.image-error-message {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  text-align: center;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.image-error-message p {
+  background-color: rgba(231, 76, 60, 0.8);
+  padding: 10px;
+  border-radius: 4px;
+  font-size: 14px;
+  max-width: 80%;
+}
+
+.result-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.download-button, .view-button {
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.download-button {
+  background-color: #27ae60;
+  color: white;
+  border: none;
+}
+
+.download-button:hover {
+  background-color: #219653;
+}
+
+.view-button {
+  background-color: #3498db;
+  color: white;
+  border: none;
+}
+
+.view-button:hover {
+  background-color: #2980b9;
+}
+
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 500px;
+}
+
+.loading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid #f3f3f3;
+  border-top: 5px solid #3498db;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 20px;
+}
+
+.loading-note {
+  margin-top: 10px;
+  color: #7f8c8d;
+  font-size: 14px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+} 
