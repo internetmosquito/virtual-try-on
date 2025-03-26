@@ -1,10 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import ImageSelector from './components/ImageSelector';
 import ResultDisplay from './components/ResultDisplay';
 import CategorySelector from './components/CategorySelector';
 import CaptionField from './components/CaptionField';
-import CorsHelper from './components/CorsHelper';
 import { processTryOn } from './services/apiService';
 
 function App() {
@@ -17,19 +16,6 @@ function App() {
   const [caption, setCaption] = useState('');
   const [processingStatus, setProcessingStatus] = useState('');
   const [retryCount, setRetryCount] = useState(0);
-  const [showCorsHelper, setShowCorsHelper] = useState(false);
-
-  // Show CORS helper if we detect a CORS error
-  useEffect(() => {
-    if (error && (
-      error.includes('Network Error') || 
-      error.includes('CORS') || 
-      error.includes('network') ||
-      error.includes('Failed to fetch')
-    )) {
-      setShowCorsHelper(true);
-    }
-  }, [error]);
 
   const handleGarmentSelect = (image) => {
     setGarmentImage(image);
@@ -143,11 +129,6 @@ function App() {
         
         <ResultDisplay resultImage={resultImage} loading={loading} />
       </main>
-
-      <CorsHelper 
-        visible={showCorsHelper} 
-        onClose={() => setShowCorsHelper(false)} 
-      />
     </div>
   );
 }
