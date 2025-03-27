@@ -32,6 +32,7 @@ npm install
 3. Create a `.env` file in the root directory and add your API key:
 ```
 REACT_APP_API_KEY=your_api_key_here
+REACT_APP_API_DOMAIN=heybeauty.ai
 ```
 
 4. Start the development server:
@@ -40,6 +41,32 @@ npm start
 ```
 
 The app will be available at http://localhost:3000
+
+## Deployment to Vercel
+
+1. Push your code to a Git repository (GitHub, GitLab, or Bitbucket)
+
+2. Install the Vercel CLI (optional):
+```bash
+npm install -g vercel
+```
+
+3. Deploy using one of these methods:
+
+   a. Using Vercel CLI:
+   ```bash
+   vercel
+   ```
+
+   b. Using Vercel Dashboard:
+   - Go to [Vercel](https://vercel.com)
+   - Import your Git repository
+   - Configure the following environment variables in your project settings:
+     ```
+     REACT_APP_API_KEY=your_api_key_here
+     REACT_APP_API_DOMAIN=heybeauty.ai
+     ```
+   - Deploy!
 
 ## Usage
 

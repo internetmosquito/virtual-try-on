@@ -1,9 +1,16 @@
 import axios from 'axios';
 
 // API configuration
-const API_DOMAIN = 'heybeauty.ai';
+const API_DOMAIN = process.env.REACT_APP_API_DOMAIN;
 const API_BASE_PATH = '/api';
-const API_KEY = 'pl-9EsSlsBgQmqYEJDJE7aJtdqVyCa9NXQ2';
+const API_KEY = process.env.REACT_APP_API_KEY;
+
+// Validate environment variables
+if (!API_DOMAIN || !API_KEY) {
+  console.error('Missing required environment variables. Please check your .env file.');
+  console.error('API_DOMAIN:', API_DOMAIN);
+  console.error('API_KEY:', API_KEY ? 'Present' : 'Missing');
+}
 
 // Generate API URL
 const getApiUrl = (path) => {
